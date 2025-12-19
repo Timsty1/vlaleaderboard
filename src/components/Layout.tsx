@@ -3,13 +3,13 @@ import { Bot, Github, ExternalLink } from 'lucide-react';
 
 const NAV_LINKS = [
   { to: '/', label: 'Overview' },
-  { to: '/benchmark/simpler-env', label: 'SIMPLER' },
-  { to: '/benchmark/calvin', label: 'CALVIN' },
   { to: '/benchmark/libero', label: 'LIBERO' },
-  { to: '/benchmark/libero-pro', label: 'LIBERO-PRO' },
-  { to: '/benchmark/meta-world', label: 'Meta-World' },
+  { to: '/benchmark/calvin', label: 'CALVIN' },
   { to: '/benchmark/vlabench', label: 'VLABench' },
+  { to: '/benchmark/meta-world', label: 'Meta-World' },
   { to: '/benchmark/robotwin', label: 'RoboTwin' },
+  { to: '/benchmark/simpler-env', label: 'SIMPLER' },
+  { to: '/benchmark/libero-pro', label: 'LIBERO-PRO' },
 ];
 
 export function Layout() {

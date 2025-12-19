@@ -5,6 +5,263 @@
 import type { Benchmark } from '../types';
 
 // ============================================
+// LIBERO
+// ============================================
+export const LIBERO: Benchmark = {
+  id: 'libero',
+  name: 'LIBERO',
+  shortName: 'LIBERO',
+  description: 'Benchmarking knowledge transfer for lifelong robot learning.',
+  iconEmoji: '📚',
+  category: 'multi-task',
+  paper: {
+    title: 'LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning',
+    authors: ['Bo Liu', 'et al.'],
+    venue: 'NeurIPS',
+    year: 2023,
+    arxivId: '2306.03310',
+  },
+  websiteUrl: 'https://lifelong-robot-learning.github.io/LIBERO/',
+  githubUrl: 'https://github.com/Lifelong-Robot-Learning/LIBERO',
+  datasetUrls: {
+    rlds: 'https://huggingface.co/datasets/openvla/modified_libero_rlds',
+    lerobot: 'https://huggingface.co/datasets/HuggingFaceVLA/libero',
+  },
+  metrics: [
+    { id: 'avg', name: 'Avg. Success', higherIsBetter: true, format: 'percentage' },
+    { id: 'goal', name: 'LIBERO-Goal', higherIsBetter: true, format: 'percentage' },
+    { id: 'long', name: 'LIBERO-Long', higherIsBetter: true, format: 'percentage' },
+    { id: 'object', name: 'LIBERO-Object', higherIsBetter: true, format: 'percentage' },
+    { id: 'spatial', name: 'LIBERO-Spatial', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2025-12-19',
+  scores: [
+    { 
+      modelId: 'vla-adapter-pro', 
+      score: 98.5, 
+      details: { goal: 98.2, long: 96.4, object: 99.6, spatial: 99.6 } 
+    },
+    { 
+      modelId: 'x-vla', 
+      score: 98.1, 
+      details: { goal: 97.8, long: 97.6, object: 98.6, spatial: 98.2 } 
+    },
+    { 
+      modelId: 'flower', 
+      score: 96.9, 
+      details: { goal: 96.1, long: 94.9, object: 99.1, spatial: 97.5 } 
+    },
+    { 
+      modelId: 'pi0.5', 
+      score: 96.85, 
+      details: { goal: 98.0, long: 92.4, object: 98.2, spatial: 98.8 } 
+    },
+    { 
+      modelId: 'pi0', 
+      score: 94.15, 
+      details: { goal: 95.8, long: 85.2, object: 98.8, spatial: 96.8 } 
+    },
+    { 
+      modelId: 'smolvla-0.45b', 
+      score: 87.3, 
+      details: { goal: 92.0, long: 71.0, object: 96.0, spatial: 90.0 } 
+    },
+    { 
+      modelId: 'pi0fast', 
+      score: 85.5, 
+      details: { goal: 88.6, long: 60.2, object: 96.8, spatial: 96.4 } 
+    },
+    { 
+      modelId: 'octo', 
+      score: 75.1, 
+      details: { goal: 84.6, long: 51.1, object: 85.7, spatial: 78.9 } 
+    },
+  ],
+};
+
+// ============================================
+// CALVIN
+// ============================================
+export const CALVIN: Benchmark = {
+  id: 'calvin',
+  name: 'CALVIN',
+  shortName: 'CALVIN',
+  description: 'Language-conditioned policy learning for long-horizon robot manipulation.',
+  iconEmoji: '📦',
+  category: 'manipulation',
+  paper: {
+    title: 'CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks',
+    authors: ['Oier Mees', 'et al.'],
+    venue: 'RA-L',
+    year: 2022,
+    arxivId: '2112.03227',
+  },
+  websiteUrl: 'http://calvin.cs.uni-freiburg.de/',
+  githubUrl: 'https://github.com/mees/calvin',
+  datasetUrls: {
+    other: 'https://github.com/mees/calvin/tree/main/dataset',
+  },
+  metrics: [
+    { id: 'avg_len', name: 'Avg. Length', higherIsBetter: true, format: 'decimal' },
+    { id: 'sr_1', name: 'SR (1 task)', higherIsBetter: true, format: 'percentage' },
+    { id: 'sr_5', name: 'SR (5 tasks)', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2025-12-19',
+  scores: [
+    { modelId: 'flower', score: 4.53, details: { sr_1: 99.4, sr_5: 77.8 } },
+    { modelId: 'vla-adapter-pro', score: 4.5, details: { sr_1: 98.5, sr_5: 80.0 } },
+    { modelId: 'x-vla', score: 4.43, details: { sr_1: 97.1, sr_5: 78.8 } },
+    { modelId: 'univla', score: 4.41, details: { sr_1: 98.9, sr_5: 75.1 } },
+  ],
+};
+
+// ============================================
+// VLABench
+// ============================================
+export const VLABENCH: Benchmark = {
+  id: 'vlabench',
+  name: 'VLABench',
+  shortName: 'VLABench',
+  description: 'A benchmark for Vision-Language-Action models with diverse robotic primitives.',
+  iconEmoji: '⚖️',
+  category: 'simulation',
+  paper: {
+    title: 'VLABench: Comprehensive Evaluation of VLA Models',
+    authors: ['VLABench Team'],
+    venue: 'arXiv',
+    year: 2024,
+  },
+  datasetUrls: {
+    lerobot: 'https://huggingface.co/datasets/VLABench/vlabench_primitive_ft_lerobot',
+    rlds: 'https://huggingface.co/datasets/VLABench/vlabench_primitive_rlds_resize224',
+  },
+  metrics: [
+    { id: 'avg', name: 'Avg. Success', higherIsBetter: true, format: 'percentage' },
+    { id: 'common_sense', name: 'Common Sense', higherIsBetter: true, format: 'percentage' },
+    { id: 'cross_category', name: 'Cross Category', higherIsBetter: true, format: 'percentage' },
+    { id: 'in_distribution', name: 'In Distribution', higherIsBetter: true, format: 'percentage' },
+    { id: 'semantic_instruction', name: 'Semantic Instruction', higherIsBetter: true, format: 'percentage' },
+    { id: 'unseen_texture', name: 'Unseen Texture', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2025-12-19',
+  scores: [
+    { 
+      modelId: 'x-vla', 
+      score: 51.05, 
+      details: { common_sense: 48.2, cross_category: 25.1, in_distribution: 67.8, semantic_instruction: 63.1 } 
+    },
+    { 
+      modelId: 'pi0', 
+      score: 29.36, 
+      details: { common_sense: 29.1, cross_category: 21.2, in_distribution: 47.0, semantic_instruction: 17.3, unseen_texture: 32.2 } 
+    },
+    { 
+      modelId: 'pi0.5', 
+      score: 24.58, 
+      details: { common_sense: 18.0, cross_category: 22.6, in_distribution: 40.6, semantic_instruction: 16.1, unseen_texture: 25.6 } 
+    },
+    { 
+      modelId: 'pi0fast', 
+      score: 22.36, 
+      details: { common_sense: 21.1, cross_category: 18.1, in_distribution: 29.1, semantic_instruction: 19.9, unseen_texture: 23.6 } 
+    },
+  ],
+};
+
+// ============================================
+// Meta-World
+// ============================================
+export const META_WORLD: Benchmark = {
+  id: 'meta-world',
+  name: 'Meta-World',
+  shortName: 'MW',
+  description: 'A benchmark for multi-task and meta reinforcement learning.',
+  iconEmoji: '🌍',
+  category: 'multi-task',
+  paper: {
+    title: 'Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning',
+    authors: ['Tianhe Yu', 'et al.'],
+    venue: 'CoRL',
+    year: 2020,
+    arxivId: '1910.10897',
+  },
+  websiteUrl: 'https://meta-world.github.io/',
+  githubUrl: 'https://github.com/Farama-Foundation/Metaworld',
+  datasetUrls: {
+    lerobot: 'https://huggingface.co/datasets/lerobot/metaworld_mt50',
+  },
+  metrics: [
+    { id: 'avg', name: 'Avg. Success', higherIsBetter: true, format: 'percentage' },
+    { id: 'easy', name: 'Easy', higherIsBetter: true, format: 'percentage' },
+    { id: 'medium', name: 'Medium', higherIsBetter: true, format: 'percentage' },
+    { id: 'hard', name: 'Hard', higherIsBetter: true, format: 'percentage' },
+    { id: 'very_hard', name: 'Very Hard', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2025-12-19',
+  scores: [
+    { modelId: 'smolvla-0.45b', score: 57.3, details: { easy: 82.5, medium: 41.8, hard: 45.0, very_hard: 60.0 } },
+  ],
+};
+
+// ============================================
+// RoboTwin 2.0
+// ============================================
+export const ROBOTWIN: Benchmark = {
+  id: 'robotwin',
+  name: 'RoboTwin 2.0',
+  shortName: 'RoboTwin',
+  description: 'A dual-arm robot manipulation benchmark with digital twin capabilities.',
+  iconEmoji: '👯',
+  category: 'simulation',
+  paper: {
+    title: 'RoboTwin: Dual-Arm Robot Manipulation Benchmark',
+    authors: ['Tianxing Chen', 'et al.'],
+    venue: 'arXiv',
+    year: 2025,
+    arxivId: '2510.10274',
+  },
+  websiteUrl: 'https://robotwin-platform.github.io/',
+  datasetUrls: {
+    other: 'https://huggingface.co/datasets/TianxingChen/RoboTwin2.0/tree/main/dataset',
+  },
+  metrics: [
+    { id: 'easy', name: 'Easy', higherIsBetter: true, format: 'percentage' },
+    { id: 'hard', name: 'Hard', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2025-12-19',
+  scores: [
+    { modelId: 'x-vla', score: 70.0, details: { easy: 70.0, hard: 39.0 } },
+    { modelId: 'pi0', score: 46.4, details: { easy: 46.4, hard: 16.3 } },
+    { modelId: 'rdt', score: 34.5, details: { easy: 34.5, hard: 13.7 } },
+  ],
+};
+
+// ============================================
+// SIMPLER-Env
+// ============================================
+export const SIMPLER_ENV: Benchmark = {
+  id: 'simpler-env',
+  name: 'SIMPLER-Env',
+  shortName: 'SIMPLER',
+  description: 'Evaluating real-world robot manipulation policies in simulation.',
+  iconEmoji: '🤖',
+  category: 'simulation',
+  paper: {
+    title: 'Evaluating Real-World Robot Manipulation Policies in Simulation',
+    authors: ['Xuanlin Li', 'et al.'],
+    venue: 'CoRL',
+    year: 2024,
+    arxivId: '2405.05941',
+  },
+  websiteUrl: 'https://simpler-env.github.io/',
+  metrics: [
+    { id: 'avg_success', name: 'Avg. Success', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2025-12-19',
+  scores: [],
+};
+
+// ============================================
 // LIBERO-PRO
 // ============================================
 export const LIBERO_PRO: Benchmark = {
@@ -15,11 +272,11 @@ export const LIBERO_PRO: Benchmark = {
   iconEmoji: '🧪',
   category: 'simulation',
   paper: {
-    title: 'LIBERO-PRO: Probing VLA Robustness',
+    title: 'LIBERO-PRO: Towards Robust and Fair Evaluation of Vision-Language-Action Models Beyond Memorization',
     authors: ['Research Team'],
     venue: 'arXiv',
     year: 2025,
-    arxivId: '2509.04996',
+    arxivId: '2510.03827',
   },
   githubUrl: 'https://github.com/Zxy-MLlab/LIBERO-PRO',
   metrics: [
@@ -101,273 +358,6 @@ export const LIBERO_PRO: Benchmark = {
         obj_obj: 0.92, obj_pos: 0.06, obj_sem: 0.96, obj_task: 0.00
       } 
     },
-    { 
-      modelId: 'nora', 
-      score: 0.40, 
-      details: { 
-        goal_obj: 0.58, goal_pos: 0.00, goal_sem: 0.88, goal_task: 0.00,
-        spatial_obj: 0.92, spatial_pos: 0.00, spatial_sem: 0.91, spatial_task: 0.00,
-        l10_obj: 0.46, l10_pos: 0.00, l10_sem: 0.74, l10_task: 0.00,
-        obj_obj: 0.86, obj_pos: 0.00, obj_sem: 0.92, obj_task: 0.00
-      } 
-    },
-  ],
-};
-
-// ============================================
-// SIMPLER-Env
-// ============================================
-export const SIMPLER_ENV: Benchmark = {
-  id: 'simpler-env',
-  name: 'SIMPLER-Env',
-  shortName: 'SIMPLER',
-  description: 'Evaluating real-world robot manipulation policies in simulation.',
-  iconEmoji: '🤖',
-  category: 'simulation',
-  paper: {
-    title: 'Evaluating Real-World Robot Manipulation Policies in Simulation',
-    authors: ['Xuanlin Li', 'et al.'],
-    venue: 'CoRL',
-    year: 2024,
-    arxivId: '2405.05941',
-  },
-  websiteUrl: 'https://simpler-env.github.io/',
-  metrics: [
-    { id: 'avg_success', name: 'Avg. Success', higherIsBetter: true, format: 'percentage' },
-  ],
-  lastUpdated: '2025-12-19',
-  scores: [],
-};
-
-// ============================================
-// CALVIN
-// ============================================
-export const CALVIN: Benchmark = {
-  id: 'calvin',
-  name: 'CALVIN',
-  shortName: 'CALVIN',
-  description: 'Language-conditioned policy learning for long-horizon robot manipulation.',
-  iconEmoji: '📦',
-  category: 'manipulation',
-  paper: {
-    title: 'CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks',
-    authors: ['Oier Mees', 'et al.'],
-    venue: 'RA-L',
-    year: 2022,
-    arxivId: '2112.03227',
-  },
-  websiteUrl: 'http://calvin.cs.uni-freiburg.de/',
-  githubUrl: 'https://github.com/mees/calvin',
-  datasetUrls: {
-    other: 'https://github.com/mees/calvin/tree/main/dataset',
-  },
-  metrics: [
-    { id: 'avg_len', name: 'Avg. Length', higherIsBetter: true, format: 'decimal' },
-    { id: 'sr_1', name: 'SR (1 task)', higherIsBetter: true, format: 'percentage' },
-    { id: 'sr_5', name: 'SR (5 tasks)', higherIsBetter: true, format: 'percentage' },
-  ],
-  lastUpdated: '2025-12-19',
-  scores: [
-    { modelId: 'flower', score: 4.53, details: { sr_1: 99.4, sr_5: 77.8 } },
-    { modelId: 'vla-adapter-pro', score: 4.5, details: { sr_1: 98.5, sr_5: 80.0 } },
-    { modelId: 'x-vla', score: 4.43, details: { sr_1: 97.1, sr_5: 78.8 } },
-    { modelId: 'univla', score: 4.41, details: { sr_1: 98.9, sr_5: 75.1 } },
-  ],
-};
-
-// ============================================
-// LIBERO
-// ============================================
-export const LIBERO: Benchmark = {
-  id: 'libero',
-  name: 'LIBERO',
-  shortName: 'LIBERO',
-  description: 'Benchmarking knowledge transfer for lifelong robot learning.',
-  iconEmoji: '📚',
-  category: 'multi-task',
-  paper: {
-    title: 'LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning',
-    authors: ['Bo Liu', 'et al.'],
-    venue: 'NeurIPS',
-    year: 2023,
-    arxivId: '2306.03310',
-  },
-  websiteUrl: 'https://lifelong-robot-learning.github.io/LIBERO/',
-  githubUrl: 'https://github.com/Lifelong-Robot-Learning/LIBERO',
-  datasetUrls: {
-    rlds: 'https://huggingface.co/datasets/openvla/modified_libero_rlds',
-    lerobot: 'https://huggingface.co/datasets/HuggingFaceVLA/libero',
-  },
-  metrics: [
-    { id: 'avg', name: 'Avg. Success', higherIsBetter: true, format: 'percentage' },
-    { id: 'goal', name: 'LIBERO-Goal', higherIsBetter: true, format: 'percentage' },
-    { id: 'long', name: 'LIBERO-Long', higherIsBetter: true, format: 'percentage' },
-    { id: 'object', name: 'LIBERO-Object', higherIsBetter: true, format: 'percentage' },
-    { id: 'spatial', name: 'LIBERO-Spatial', higherIsBetter: true, format: 'percentage' },
-  ],
-  lastUpdated: '2025-12-19',
-  scores: [
-    { 
-      modelId: 'vla-adapter-pro', 
-      score: 98.5, 
-      details: { goal: 98.2, long: 96.4, object: 99.6, spatial: 99.6 } 
-    },
-    { 
-      modelId: 'x-vla', 
-      score: 98.1, 
-      details: { goal: 97.8, long: 97.6, object: 98.6, spatial: 98.2 } 
-    },
-    { 
-      modelId: 'flower', 
-      score: 96.9, 
-      details: { goal: 96.1, long: 94.9, object: 99.1, spatial: 97.5 } 
-    },
-    { 
-      modelId: 'pi0.5', 
-      score: 96.85, 
-      details: { goal: 98.0, long: 92.4, object: 98.2, spatial: 98.8 } 
-    },
-    { 
-      modelId: 'pi0', 
-      score: 94.15, 
-      details: { goal: 95.8, long: 85.2, object: 98.8, spatial: 96.8 } 
-    },
-    { 
-      modelId: 'smolvla-0.45b', 
-      score: 87.3, 
-      details: { goal: 92.0, long: 71.0, object: 96.0, spatial: 90.0 } 
-    },
-    { 
-      modelId: 'pi0fast', 
-      score: 85.5, 
-      details: { goal: 88.6, long: 60.2, object: 96.8, spatial: 96.4 } 
-    },
-    { 
-      modelId: 'octo', 
-      score: 75.1, 
-      details: { goal: 84.6, long: 51.1, object: 85.7, spatial: 78.9 } 
-    },
-  ],
-};
-
-// ============================================
-// Meta-World
-// ============================================
-export const META_WORLD: Benchmark = {
-  id: 'meta-world',
-  name: 'Meta-World',
-  shortName: 'MW',
-  description: 'A benchmark for multi-task and meta reinforcement learning.',
-  iconEmoji: '🌍',
-  category: 'multi-task',
-  paper: {
-    title: 'Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning',
-    authors: ['Tianhe Yu', 'et al.'],
-    venue: 'CoRL',
-    year: 2020,
-    arxivId: '1910.10897',
-  },
-  websiteUrl: 'https://meta-world.github.io/',
-  githubUrl: 'https://github.com/Farama-Foundation/Metaworld',
-  datasetUrls: {
-    lerobot: 'https://huggingface.co/datasets/lerobot/metaworld_mt50',
-  },
-  metrics: [
-    { id: 'avg', name: 'Avg. Success', higherIsBetter: true, format: 'percentage' },
-    { id: 'easy', name: 'Easy', higherIsBetter: true, format: 'percentage' },
-    { id: 'medium', name: 'Medium', higherIsBetter: true, format: 'percentage' },
-    { id: 'hard', name: 'Hard', higherIsBetter: true, format: 'percentage' },
-    { id: 'very_hard', name: 'Very Hard', higherIsBetter: true, format: 'percentage' },
-  ],
-  lastUpdated: '2025-12-19',
-  scores: [
-    { modelId: 'smolvla-0.45b', score: 57.3, details: { easy: 82.5, medium: 41.8, hard: 45.0, very_hard: 60.0 } },
-  ],
-};
-
-// ============================================
-// RoboTwin 2.0
-// ============================================
-export const ROBOTWIN: Benchmark = {
-  id: 'robotwin',
-  name: 'RoboTwin 2.0',
-  shortName: 'RoboTwin',
-  description: 'A dual-arm robot manipulation benchmark with digital twin capabilities.',
-  iconEmoji: '👯',
-  category: 'simulation',
-  paper: {
-    title: 'RoboTwin: Dual-Arm Robot Manipulation Benchmark',
-    authors: ['Tianxing Chen', 'et al.'],
-    venue: 'arXiv',
-    year: 2025,
-    arxivId: '2510.10274',
-  },
-  websiteUrl: 'https://robotwin-platform.github.io/',
-  datasetUrls: {
-    other: 'https://huggingface.co/datasets/TianxingChen/RoboTwin2.0/tree/main/dataset',
-  },
-  metrics: [
-    { id: 'easy', name: 'Easy', higherIsBetter: true, format: 'percentage' },
-    { id: 'hard', name: 'Hard', higherIsBetter: true, format: 'percentage' },
-  ],
-  lastUpdated: '2025-12-19',
-  scores: [
-    { modelId: 'x-vla', score: 70.0, details: { easy: 70.0, hard: 39.0 } },
-    { modelId: 'pi0', score: 46.4, details: { easy: 46.4, hard: 16.3 } },
-    { modelId: 'rdt', score: 34.5, details: { easy: 34.5, hard: 13.7 } },
-  ],
-};
-
-// ============================================
-// VLABench
-// ============================================
-export const VLABENCH: Benchmark = {
-  id: 'vlabench',
-  name: 'VLABench',
-  shortName: 'VLABench',
-  description: 'A benchmark for Vision-Language-Action models with diverse robotic primitives.',
-  iconEmoji: '⚖️',
-  category: 'simulation',
-  paper: {
-    title: 'VLABench: Comprehensive Evaluation of VLA Models',
-    authors: ['VLABench Team'],
-    venue: 'arXiv',
-    year: 2024,
-  },
-  datasetUrls: {
-    lerobot: 'https://huggingface.co/datasets/VLABench/vlabench_primitive_ft_lerobot',
-    rlds: 'https://huggingface.co/datasets/VLABench/vlabench_primitive_rlds_resize224',
-  },
-  metrics: [
-    { id: 'avg', name: 'Avg. Success', higherIsBetter: true, format: 'percentage' },
-    { id: 'common_sense', name: 'Common Sense', higherIsBetter: true, format: 'percentage' },
-    { id: 'cross_category', name: 'Cross Category', higherIsBetter: true, format: 'percentage' },
-    { id: 'in_distribution', name: 'In Distribution', higherIsBetter: true, format: 'percentage' },
-    { id: 'semantic_instruction', name: 'Semantic Instruction', higherIsBetter: true, format: 'percentage' },
-    { id: 'unseen_texture', name: 'Unseen Texture', higherIsBetter: true, format: 'percentage' },
-  ],
-  lastUpdated: '2025-12-19',
-  scores: [
-    { 
-      modelId: 'x-vla', 
-      score: 51.05, 
-      details: { common_sense: 48.2, cross_category: 25.1, in_distribution: 67.8, semantic_instruction: 63.1 } 
-    },
-    { 
-      modelId: 'pi0', 
-      score: 29.36, 
-      details: { common_sense: 29.1, cross_category: 21.2, in_distribution: 47.0, semantic_instruction: 17.3, unseen_texture: 32.2 } 
-    },
-    { 
-      modelId: 'pi0.5', 
-      score: 24.58, 
-      details: { common_sense: 18.0, cross_category: 22.6, in_distribution: 40.6, semantic_instruction: 16.1, unseen_texture: 25.6 } 
-    },
-    { 
-      modelId: 'pi0fast', 
-      score: 22.36, 
-      details: { common_sense: 21.1, cross_category: 18.1, in_distribution: 29.1, semantic_instruction: 19.9, unseen_texture: 23.6 } 
-    },
   ],
 };
 
@@ -375,13 +365,13 @@ export const VLABENCH: Benchmark = {
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
-  LIBERO_PRO,
-  SIMPLER_ENV,
-  CALVIN,
   LIBERO,
-  META_WORLD,
+  CALVIN,
   VLABENCH,
+  META_WORLD,
   ROBOTWIN,
+  SIMPLER_ENV,
+  LIBERO_PRO,
 ];
 
 export const BENCHMARKS_BY_ID: Record<string, Benchmark> = ALL_BENCHMARKS.reduce(
