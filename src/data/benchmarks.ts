@@ -137,33 +137,33 @@ export const VLABENCH: Benchmark = {
   },
   metrics: [
     { id: 'avg', name: 'Avg. Success', higherIsBetter: true, format: 'percentage' },
-    { id: 'common_sense', name: 'Common Sense', higherIsBetter: true, format: 'percentage' },
-    { id: 'cross_category', name: 'Cross Category', higherIsBetter: true, format: 'percentage' },
-    { id: 'in_distribution', name: 'In Distribution', higherIsBetter: true, format: 'percentage' },
-    { id: 'semantic_instruction', name: 'Semantic Instruction', higherIsBetter: true, format: 'percentage' },
-    { id: 'unseen_texture', name: 'Unseen Texture', higherIsBetter: true, format: 'percentage' },
+    { id: 'track_1_in_distribution', name: 'Track 1 - In Distribution', higherIsBetter: true, format: 'percentage' },
+    { id: 'track_2_cross_category', name: 'Track 2 - Cross Category', higherIsBetter: true, format: 'percentage' },
+    { id: 'track_3_common_sense', name: 'Track 3 - Common Sense', higherIsBetter: true, format: 'percentage' },
+    { id: 'track_4_semantic_instruction', name: 'Track 4 - Semantic Instruction', higherIsBetter: true, format: 'percentage' },
+    { id: 'track_6_unseen_texture', name: 'Track 6 - Unseen Texture', higherIsBetter: true, format: 'percentage' },
   ],
   lastUpdated: '2025-12-19',
   scores: [
     { 
       modelId: 'x-vla', 
       score: 51.05, 
-      details: { common_sense: 48.2, cross_category: 25.1, in_distribution: 67.8, semantic_instruction: 63.1 } 
+      details: { track_3_common_sense: 48.2, track_2_cross_category: 25.1, track_1_in_distribution: 67.8, track_4_semantic_instruction: 63.1 } 
     },
     { 
       modelId: 'pi0', 
       score: 29.36, 
-      details: { common_sense: 29.1, cross_category: 21.2, in_distribution: 47.0, semantic_instruction: 17.3, unseen_texture: 32.2 } 
+      details: { track_3_common_sense: 29.1, track_2_cross_category: 21.2, track_1_in_distribution: 47.0, track_4_semantic_instruction: 17.3, track_6_unseen_texture: 32.2 } 
     },
     { 
       modelId: 'pi0.5', 
       score: 24.58, 
-      details: { common_sense: 18.0, cross_category: 22.6, in_distribution: 40.6, semantic_instruction: 16.1, unseen_texture: 25.6 } 
+      details: { track_3_common_sense: 18.0, track_2_cross_category: 22.6, track_1_in_distribution: 40.6, track_4_semantic_instruction: 16.1, track_6_unseen_texture: 25.6 } 
     },
     { 
       modelId: 'pi0fast', 
       score: 22.36, 
-      details: { common_sense: 21.1, cross_category: 18.1, in_distribution: 29.1, semantic_instruction: 19.9, unseen_texture: 23.6 } 
+      details: { track_3_common_sense: 21.1, track_2_cross_category: 18.1, track_1_in_distribution: 29.1, track_4_semantic_instruction: 19.9, track_6_unseen_texture: 23.6 } 
     },
   ],
 };
@@ -218,7 +218,7 @@ export const ROBOTWIN: Benchmark = {
     authors: ['Tianxing Chen', 'et al.'],
     venue: 'arXiv',
     year: 2025,
-    arxivId: '2510.10274',
+    arxivId: '2506.18088',
   },
   websiteUrl: 'https://robotwin-platform.github.io/',
   datasetUrls: {
