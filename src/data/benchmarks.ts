@@ -232,7 +232,6 @@ export const ROBOTWIN: Benchmark = {
   scores: [
     { modelId: 'x-vla', score: 70.0, details: { easy: 70.0, hard: 39.0 } },
     { modelId: 'pi0', score: 46.4, details: { easy: 46.4, hard: 16.3 } },
-    { modelId: 'rdt', score: 34.5, details: { easy: 34.5, hard: 13.7 } },
   ],
 };
 

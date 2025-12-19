@@ -159,19 +159,6 @@ export const MODELS: Record<string, ModelEntry> = {
     isOpenSource: true,
     dateAdded: '2025-01-01',
   },
-  'rdt': {
-    id: 'rdt',
-    name: 'RDT',
-    organization: 'Research Team',
-    paper: {
-      title: 'RDT: Robotic Diffusion Transformer',
-      authors: ['Research Team'],
-      year: 2025,
-      url: 'https://arxiv.org/pdf/2506.18088',
-    },
-    isOpenSource: true,
-    dateAdded: '2025-02-01',
-  },
 };
 
 export const getAllModels = () => Object.values(MODELS);
