@@ -1,5 +1,5 @@
 import { useParams, Navigate } from 'react-router-dom';
-import { ExternalLink, FileText, Github, Globe, Clock, Tag } from 'lucide-react';
+import { ExternalLink, FileText, Github, Globe, Clock, Tag, Database } from 'lucide-react';
 import { getBenchmarkById, getLeaderboardData } from '../data';
 import { LeaderboardTable } from '../components/LeaderboardTable';
 import { getArxivUrl } from '../data/utils';
@@ -91,6 +91,29 @@ export function BenchmarkPage() {
             </a>
           )}
         </div>
+
+        {benchmark.datasetUrls && (
+          <div className="dataset-links-section">
+            <h3 className="section-subtitle"><Database size={16} /> Datasets</h3>
+            <div className="dataset-links">
+              {benchmark.datasetUrls.lerobot && (
+                <a href={benchmark.datasetUrls.lerobot} target="_blank" rel="noopener noreferrer" className="dataset-link">
+                  LeRobot
+                </a>
+              )}
+              {benchmark.datasetUrls.rlds && (
+                <a href={benchmark.datasetUrls.rlds} target="_blank" rel="noopener noreferrer" className="dataset-link">
+                  RLDS
+                </a>
+              )}
+              {benchmark.datasetUrls.other && (
+                <a href={benchmark.datasetUrls.other} target="_blank" rel="noopener noreferrer" className="dataset-link">
+                  Dataset
+                </a>
+              )}
+            </div>
+          </div>
+        )}
       </div>
 
       {benchmark.paper && (

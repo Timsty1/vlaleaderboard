@@ -1,255 +1,373 @@
 // ============================================
-// VLA Simulation Benchmarks Registry
-// ============================================
-// This file contains all benchmark definitions and scores.
-// To add a new benchmark or update scores, modify this file.
+// VLA Simulation Benchmarks Registry (Strictly based on provided info)
 // ============================================
 
 import type { Benchmark } from '../types';
 
 // ============================================
-// SIMPLER-Env Benchmark
+// LIBERO-PRO
+// ============================================
+export const LIBERO_PRO: Benchmark = {
+  id: 'libero-pro',
+  name: 'LIBERO-PRO',
+  shortName: 'LIBERO-PRO',
+  description: 'Probing the Robustness and Generalization of VLA models on LIBERO.',
+  iconEmoji: '🧪',
+  category: 'simulation',
+  paper: {
+    title: 'LIBERO-PRO: Probing VLA Robustness',
+    authors: ['Research Team'],
+    venue: 'arXiv',
+    year: 2025,
+    arxivId: '2509.04996',
+  },
+  githubUrl: 'https://github.com/Zxy-MLlab/LIBERO-PRO',
+  metrics: [
+    { id: 'total', name: 'Total', higherIsBetter: true, format: 'decimal' },
+    // LIBERO-Goal
+    { id: 'goal_obj', name: 'Goal (Obj)', higherIsBetter: true, format: 'decimal' },
+    { id: 'goal_pos', name: 'Goal (Pos)', higherIsBetter: true, format: 'decimal' },
+    { id: 'goal_sem', name: 'Goal (Sem)', higherIsBetter: true, format: 'decimal' },
+    { id: 'goal_task', name: 'Goal (Task)', higherIsBetter: true, format: 'decimal' },
+    { id: 'goal_env', name: 'Goal (Env)', higherIsBetter: true, format: 'decimal' },
+    // LIBERO-Spatial
+    { id: 'spatial_obj', name: 'Spatial (Obj)', higherIsBetter: true, format: 'decimal' },
+    { id: 'spatial_pos', name: 'Spatial (Pos)', higherIsBetter: true, format: 'decimal' },
+    { id: 'spatial_sem', name: 'Spatial (Sem)', higherIsBetter: true, format: 'decimal' },
+    { id: 'spatial_task', name: 'Spatial (Task)', higherIsBetter: true, format: 'decimal' },
+    { id: 'spatial_env', name: 'Spatial (Env)', higherIsBetter: true, format: 'decimal' },
+    // LIBERO-10
+    { id: 'l10_obj', name: 'L10 (Obj)', higherIsBetter: true, format: 'decimal' },
+    { id: 'l10_pos', name: 'L10 (Pos)', higherIsBetter: true, format: 'decimal' },
+    { id: 'l10_sem', name: 'L10 (Sem)', higherIsBetter: true, format: 'decimal' },
+    { id: 'l10_task', name: 'L10 (Task)', higherIsBetter: true, format: 'decimal' },
+    { id: 'l10_env', name: 'L10 (Env)', higherIsBetter: true, format: 'decimal' },
+    // LIBERO-Object
+    { id: 'obj_obj', name: 'Object (Obj)', higherIsBetter: true, format: 'decimal' },
+    { id: 'obj_pos', name: 'Object (Pos)', higherIsBetter: true, format: 'decimal' },
+    { id: 'obj_sem', name: 'Object (Sem)', higherIsBetter: true, format: 'decimal' },
+    { id: 'obj_task', name: 'Object (Task)', higherIsBetter: true, format: 'decimal' },
+    { id: 'obj_env', name: 'Object (Env)', higherIsBetter: true, format: 'decimal' },
+  ],
+  lastUpdated: '2025-12-19',
+  scores: [
+    { 
+      modelId: 'pi0.5', 
+      score: 0.53, 
+      details: { 
+        goal_obj: 0.97, goal_pos: 0.38, goal_sem: 0.97, goal_task: 0.00, goal_env: 0.46,
+        spatial_obj: 0.97, spatial_pos: 0.20, spatial_sem: 0.97, spatial_task: 0.01, spatial_env: 0.46,
+        l10_obj: 0.92, l10_pos: 0.08, l10_sem: 0.93, l10_task: 0.01, l10_env: 0.46,
+        obj_obj: 0.98, obj_pos: 0.17, obj_sem: 0.96, obj_task: 0.01, obj_env: 0.73
+      } 
+    },
+    { 
+      modelId: 'openvla', 
+      score: 0.52, 
+      details: { 
+        goal_obj: 0.96, goal_pos: 0.00, goal_sem: 0.98, goal_task: 0.00, goal_env: 0.98,
+        spatial_obj: 0.97, spatial_pos: 0.00, spatial_sem: 0.97, spatial_task: 0.00, spatial_env: 0.89,
+        l10_obj: 0.81, l10_pos: 0.00, l10_sem: 0.96, l10_task: 0.00, l10_env: 0.85,
+        obj_obj: 0.98, obj_pos: 0.00, obj_sem: 0.98, obj_task: 0.00, obj_env: 0.00
+      } 
+    },
+    { 
+      modelId: 'x-vla', 
+      score: 0.46, 
+      details: { 
+        goal_obj: 0.68, goal_pos: 0.01, goal_sem: 0.98, goal_task: 0.09,
+        spatial_obj: 0.97, spatial_pos: 0.00, spatial_sem: 0.96, spatial_task: 0.00,
+        l10_obj: 0.62, l10_pos: 0.00, l10_sem: 0.95, l10_task: 0.10,
+        obj_obj: 0.89, obj_pos: 0.02, obj_sem: 0.98, obj_task: 0.08
+      } 
+    },
+    { 
+      modelId: 'pi0', 
+      score: 0.44, 
+      details: { 
+        goal_obj: 0.94, goal_pos: 0.00, goal_sem: 0.93, goal_task: 0.00, goal_env: 0.39,
+        spatial_obj: 0.95, spatial_pos: 0.00, spatial_sem: 0.97, spatial_task: 0.00, spatial_env: 0.60,
+        l10_obj: 0.79, l10_pos: 0.00, l10_sem: 0.82, l10_task: 0.00, l10_env: 0.27,
+        obj_obj: 0.94, obj_pos: 0.00, obj_sem: 0.90, obj_task: 0.00, obj_env: 0.29
+      } 
+    },
+    { 
+      modelId: 'molmoact', 
+      score: 0.41, 
+      details: { 
+        goal_obj: 0.68, goal_pos: 0.00, goal_sem: 0.85, goal_task: 0.00,
+        spatial_obj: 0.90, spatial_pos: 0.00, spatial_sem: 0.88, spatial_task: 0.00,
+        l10_obj: 0.54, l10_pos: 0.00, l10_sem: 0.74, l10_task: 0.06,
+        obj_obj: 0.92, obj_pos: 0.06, obj_sem: 0.96, obj_task: 0.00
+      } 
+    },
+    { 
+      modelId: 'nora', 
+      score: 0.40, 
+      details: { 
+        goal_obj: 0.58, goal_pos: 0.00, goal_sem: 0.88, goal_task: 0.00,
+        spatial_obj: 0.92, spatial_pos: 0.00, spatial_sem: 0.91, spatial_task: 0.00,
+        l10_obj: 0.46, l10_pos: 0.00, l10_sem: 0.74, l10_task: 0.00,
+        obj_obj: 0.86, obj_pos: 0.00, obj_sem: 0.92, obj_task: 0.00
+      } 
+    },
+  ],
+};
+
+// ============================================
+// SIMPLER-Env
 // ============================================
 export const SIMPLER_ENV: Benchmark = {
   id: 'simpler-env',
   name: 'SIMPLER-Env',
   shortName: 'SIMPLER',
-  description: 'SIMPLER: Simulated Manipulation Policy Evaluation for Real Robot Transfer. A collection of simulation environments for evaluating VLA models.',
+  description: 'Evaluating real-world robot manipulation policies in simulation.',
   iconEmoji: '🤖',
   category: 'simulation',
   paper: {
     title: 'Evaluating Real-World Robot Manipulation Policies in Simulation',
-    authors: ['Xuanlin Li', 'Kyle Hsu', 'Jiayuan Gu', 'Karl Pertsch', 'Oier Mees', 'Homer Rich Walke', 'Chuyuan Fu', 'Ishikaa Lunawat', 'Isabel Sieh', 'Sean Kirmani', 'Sergey Levine', 'Jiajun Wu', 'Chelsea Finn', 'Hao Su', 'Quan Vuong', 'Ted Xiao'],
+    authors: ['Xuanlin Li', 'et al.'],
     venue: 'CoRL',
     year: 2024,
     arxivId: '2405.05941',
   },
   websiteUrl: 'https://simpler-env.github.io/',
-  githubUrl: 'https://github.com/simpler-env/SimplerEnv',
   metrics: [
-    { id: 'avg_success', name: 'Avg. Success Rate', higherIsBetter: true, format: 'percentage' },
-    { id: 'google_robot', name: 'Google Robot Tasks', higherIsBetter: true, format: 'percentage' },
-    { id: 'widowx', name: 'WidowX Tasks', higherIsBetter: true, format: 'percentage' },
+    { id: 'avg_success', name: 'Avg. Success', higherIsBetter: true, format: 'percentage' },
   ],
-  taskTypes: ['manipulation', 'pick-and-place', 'drawer'],
-  lastUpdated: '2024-12-01',
-  scores: [
-    { modelId: 'openvla-7b', score: 43.5, details: { google_robot: 52.3, widowx: 34.7 } },
-    { modelId: 'rt-2-pali-x-55b', score: 61.2, details: { google_robot: 68.5, widowx: 53.9 } },
-    { modelId: 'rt-2-pali-x-5b', score: 48.7, details: { google_robot: 55.2, widowx: 42.2 } },
-    { modelId: 'octo-base', score: 26.8, details: { google_robot: 31.5, widowx: 22.1 } },
-    { modelId: 'octo-small', score: 19.3, details: { google_robot: 23.1, widowx: 15.5 } },
-    { modelId: 'rt-1', score: 35.2, details: { google_robot: 42.8, widowx: 27.6 } },
-  ],
+  lastUpdated: '2025-12-19',
+  scores: [],
 };
 
 // ============================================
-// Calvin Benchmark
+// CALVIN
 // ============================================
 export const CALVIN: Benchmark = {
   id: 'calvin',
   name: 'CALVIN',
   shortName: 'CALVIN',
-  description: 'CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks.',
+  description: 'Language-conditioned policy learning for long-horizon robot manipulation.',
   iconEmoji: '📦',
   category: 'manipulation',
   paper: {
     title: 'CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks',
-    authors: ['Oier Mees', 'Lukas Hermann', 'Erick Rosete-Beas', 'Wolfram Burgard'],
+    authors: ['Oier Mees', 'et al.'],
     venue: 'RA-L',
     year: 2022,
     arxivId: '2112.03227',
   },
   websiteUrl: 'http://calvin.cs.uni-freiburg.de/',
   githubUrl: 'https://github.com/mees/calvin',
+  datasetUrls: {
+    other: 'https://github.com/mees/calvin/tree/main/dataset',
+  },
   metrics: [
-    { id: 'avg_len', name: 'Avg. Length', description: 'Average chain length completed', higherIsBetter: true, format: 'decimal' },
+    { id: 'avg_len', name: 'Avg. Length', higherIsBetter: true, format: 'decimal' },
     { id: 'sr_1', name: 'SR (1 task)', higherIsBetter: true, format: 'percentage' },
     { id: 'sr_5', name: 'SR (5 tasks)', higherIsBetter: true, format: 'percentage' },
   ],
-  taskTypes: ['manipulation', 'long-horizon', 'language-conditioned'],
-  lastUpdated: '2024-11-15',
+  lastUpdated: '2025-12-19',
   scores: [
-    { modelId: 'openvla-7b', score: 3.21, details: { sr_1: 88.5, sr_5: 52.3 } },
-    { modelId: 'rdt-1b', score: 3.85, details: { sr_1: 94.2, sr_5: 68.7 } },
-    { modelId: 'gr-1', score: 3.56, details: { sr_1: 91.5, sr_5: 59.8 } },
-    { modelId: 'hpt', score: 3.12, details: { sr_1: 85.3, sr_5: 48.2 } },
-    { modelId: 'octo-base', score: 2.45, details: { sr_1: 72.1, sr_5: 31.5 } },
-    { modelId: '3d-diffuser-actor', score: 3.68, details: { sr_1: 92.8, sr_5: 62.4 } },
-    { modelId: 'diffusion-policy', score: 2.89, details: { sr_1: 79.5, sr_5: 42.1 } },
+    { modelId: 'flower', score: 4.53, details: { sr_1: 99.4, sr_5: 77.8 } },
+    { modelId: 'vla-adapter-pro', score: 4.5, details: { sr_1: 98.5, sr_5: 80.0 } },
+    { modelId: 'x-vla', score: 4.43, details: { sr_1: 97.1, sr_5: 78.8 } },
+    { modelId: 'univla', score: 4.41, details: { sr_1: 98.9, sr_5: 75.1 } },
   ],
 };
 
 // ============================================
-// Meta-World Benchmark
-// ============================================
-export const META_WORLD: Benchmark = {
-  id: 'meta-world',
-  name: 'Meta-World',
-  shortName: 'MW',
-  description: 'Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning.',
-  iconEmoji: '🌍',
-  category: 'multi-task',
-  paper: {
-    title: 'Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning',
-    authors: ['Tianhe Yu', 'Deirdre Quillen', 'Zhanpeng He', 'Ryan Julian', 'Karol Hausman', 'Chelsea Finn', 'Sergey Levine'],
-    venue: 'CoRL',
-    year: 2020,
-    arxivId: '1910.10897',
-  },
-  websiteUrl: 'https://meta-world.github.io/',
-  githubUrl: 'https://github.com/Farama-Foundation/Metaworld',
-  metrics: [
-    { id: 'mt50_success', name: 'MT50 Success', higherIsBetter: true, format: 'percentage' },
-    { id: 'ml45_success', name: 'ML45 Success', higherIsBetter: true, format: 'percentage' },
-  ],
-  taskTypes: ['manipulation', 'multi-task', 'meta-learning'],
-  lastUpdated: '2024-10-01',
-  scores: [
-    { modelId: 'openvla-7b', score: 78.5, details: { mt50_success: 78.5, ml45_success: 65.2 } },
-    { modelId: 'octo-base', score: 68.3, details: { mt50_success: 68.3, ml45_success: 52.1 } },
-    { modelId: 'hpt', score: 82.1, details: { mt50_success: 82.1, ml45_success: 71.5 } },
-    { modelId: 'diffusion-policy', score: 85.4, details: { mt50_success: 85.4, ml45_success: 73.8 } },
-    { modelId: 'rt-1', score: 62.7, details: { mt50_success: 62.7, ml45_success: 48.3 } },
-  ],
-};
-
-// ============================================
-// RLBench Benchmark
-// ============================================
-export const RLBENCH: Benchmark = {
-  id: 'rlbench',
-  name: 'RLBench',
-  shortName: 'RLB',
-  description: 'RLBench: The Robot Learning Benchmark. A large-scale benchmark for robot learning with 100 unique tasks.',
-  iconEmoji: '🔧',
-  category: 'manipulation',
-  paper: {
-    title: 'RLBench: The Robot Learning Benchmark',
-    authors: ['Stephen James', 'Zicong Ma', 'David Rovick Arrojo', 'Andrew J. Davison'],
-    venue: 'RA-L',
-    year: 2020,
-    arxivId: '1909.12271',
-  },
-  websiteUrl: 'https://sites.google.com/view/rlbench',
-  githubUrl: 'https://github.com/stepjam/RLBench',
-  metrics: [
-    { id: 'avg_success', name: 'Avg. Success Rate', higherIsBetter: true, format: 'percentage' },
-    { id: 'multi_var', name: 'Multi-Variation', higherIsBetter: true, format: 'percentage' },
-  ],
-  taskTypes: ['manipulation', 'multi-task'],
-  lastUpdated: '2024-11-01',
-  scores: [
-    { modelId: 'openvla-7b', score: 45.8, details: { multi_var: 42.3 } },
-    { modelId: '3d-diffuser-actor', score: 68.2, details: { multi_var: 65.5 } },
-    { modelId: 'rdt-1b', score: 72.5, details: { multi_var: 69.1 } },
-    { modelId: 'hpt', score: 58.3, details: { multi_var: 54.7 } },
-    { modelId: 'diffusion-policy', score: 52.1, details: { multi_var: 48.6 } },
-    { modelId: 'act', score: 48.7, details: { multi_var: 45.2 } },
-  ],
-};
-
-// ============================================
-// LIBERO Benchmark
+// LIBERO
 // ============================================
 export const LIBERO: Benchmark = {
   id: 'libero',
   name: 'LIBERO',
   shortName: 'LIBERO',
-  description: 'LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning. A comprehensive benchmark suite for lifelong learning.',
+  description: 'Benchmarking knowledge transfer for lifelong robot learning.',
   iconEmoji: '📚',
   category: 'multi-task',
   paper: {
     title: 'LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning',
-    authors: ['Bo Liu', 'Yifeng Zhu', 'Chongkai Gao', 'Yihao Feng', 'Qiang Liu', 'Yuke Zhu', 'Peter Stone'],
+    authors: ['Bo Liu', 'et al.'],
     venue: 'NeurIPS',
     year: 2023,
     arxivId: '2306.03310',
   },
   websiteUrl: 'https://lifelong-robot-learning.github.io/LIBERO/',
   githubUrl: 'https://github.com/Lifelong-Robot-Learning/LIBERO',
+  datasetUrls: {
+    rlds: 'https://huggingface.co/datasets/openvla/modified_libero_rlds',
+    lerobot: 'https://huggingface.co/datasets/HuggingFaceVLA/libero',
+  },
   metrics: [
-    { id: 'libero_spatial', name: 'LIBERO-Spatial', higherIsBetter: true, format: 'percentage' },
-    { id: 'libero_object', name: 'LIBERO-Object', higherIsBetter: true, format: 'percentage' },
-    { id: 'libero_goal', name: 'LIBERO-Goal', higherIsBetter: true, format: 'percentage' },
-    { id: 'libero_long', name: 'LIBERO-Long', higherIsBetter: true, format: 'percentage' },
+    { id: 'avg', name: 'Avg. Success', higherIsBetter: true, format: 'percentage' },
+    { id: 'goal', name: 'LIBERO-Goal', higherIsBetter: true, format: 'percentage' },
+    { id: 'long', name: 'LIBERO-Long', higherIsBetter: true, format: 'percentage' },
+    { id: 'object', name: 'LIBERO-Object', higherIsBetter: true, format: 'percentage' },
+    { id: 'spatial', name: 'LIBERO-Spatial', higherIsBetter: true, format: 'percentage' },
   ],
-  taskTypes: ['manipulation', 'lifelong-learning', 'multi-task'],
-  lastUpdated: '2024-12-10',
+  lastUpdated: '2025-12-19',
   scores: [
-    { modelId: 'openvla-7b', score: 82.4, details: { libero_spatial: 84.5, libero_object: 86.2, libero_goal: 79.8, libero_long: 79.1 } },
-    { modelId: 'octo-base', score: 58.3, details: { libero_spatial: 62.1, libero_object: 65.4, libero_goal: 52.8, libero_long: 52.9 } },
-    { modelId: 'rdt-1b', score: 88.7, details: { libero_spatial: 91.2, libero_object: 92.5, libero_goal: 85.3, libero_long: 85.8 } },
-    { modelId: 'diffusion-policy', score: 72.5, details: { libero_spatial: 75.3, libero_object: 78.1, libero_goal: 68.9, libero_long: 67.7 } },
-    { modelId: 'act', score: 65.2, details: { libero_spatial: 68.5, libero_object: 72.1, libero_goal: 61.2, libero_long: 59.0 } },
+    { 
+      modelId: 'vla-adapter-pro', 
+      score: 98.5, 
+      details: { goal: 98.2, long: 96.4, object: 99.6, spatial: 99.6 } 
+    },
+    { 
+      modelId: 'x-vla', 
+      score: 98.1, 
+      details: { goal: 97.8, long: 97.6, object: 98.6, spatial: 98.2 } 
+    },
+    { 
+      modelId: 'flower', 
+      score: 96.9, 
+      details: { goal: 96.1, long: 94.9, object: 99.1, spatial: 97.5 } 
+    },
+    { 
+      modelId: 'pi0.5', 
+      score: 96.85, 
+      details: { goal: 98.0, long: 92.4, object: 98.2, spatial: 98.8 } 
+    },
+    { 
+      modelId: 'pi0', 
+      score: 94.15, 
+      details: { goal: 95.8, long: 85.2, object: 98.8, spatial: 96.8 } 
+    },
+    { 
+      modelId: 'smolvla-0.45b', 
+      score: 87.3, 
+      details: { goal: 92.0, long: 71.0, object: 96.0, spatial: 90.0 } 
+    },
+    { 
+      modelId: 'pi0fast', 
+      score: 85.5, 
+      details: { goal: 88.6, long: 60.2, object: 96.8, spatial: 96.4 } 
+    },
+    { 
+      modelId: 'octo', 
+      score: 75.1, 
+      details: { goal: 84.6, long: 51.1, object: 85.7, spatial: 78.9 } 
+    },
   ],
 };
 
 // ============================================
-// ManiSkill Benchmark
+// Meta-World
 // ============================================
-export const MANISKILL: Benchmark = {
-  id: 'maniskill',
-  name: 'ManiSkill',
-  shortName: 'MS',
-  description: 'ManiSkill: A Unified Benchmark for Generalizable Manipulation Skills with large-scale demonstrations.',
-  iconEmoji: '🦾',
-  category: 'manipulation',
+export const META_WORLD: Benchmark = {
+  id: 'meta-world',
+  name: 'Meta-World',
+  shortName: 'MW',
+  description: 'A benchmark for multi-task and meta reinforcement learning.',
+  iconEmoji: '🌍',
+  category: 'multi-task',
   paper: {
-    title: 'ManiSkill2: A Unified Benchmark for Generalizable Manipulation Skills',
-    authors: ['Jiayuan Gu', 'Fanbo Xiang', 'Xuanlin Li', 'Zhan Ling', 'Xiqiang Liu', 'Tongzhou Mu', 'Yihe Tang', 'Stone Tao', 'Xinyue Wei', 'Yunchao Yao', 'Xiaodi Yuan', 'Pengwei Xie', 'Zhiao Huang', 'Rui Chen', 'Hao Su'],
-    venue: 'ICLR',
-    year: 2023,
-    arxivId: '2302.04659',
+    title: 'Meta-World: A Benchmark and Evaluation for Multi-Task and Meta Reinforcement Learning',
+    authors: ['Tianhe Yu', 'et al.'],
+    venue: 'CoRL',
+    year: 2020,
+    arxivId: '1910.10897',
   },
-  websiteUrl: 'https://maniskill.ai/',
-  githubUrl: 'https://github.com/haosulab/ManiSkill',
+  websiteUrl: 'https://meta-world.github.io/',
+  githubUrl: 'https://github.com/Farama-Foundation/Metaworld',
+  datasetUrls: {
+    lerobot: 'https://huggingface.co/datasets/lerobot/metaworld_mt50',
+  },
   metrics: [
-    { id: 'rigid_body', name: 'Rigid Body Tasks', higherIsBetter: true, format: 'percentage' },
-    { id: 'soft_body', name: 'Soft Body Tasks', higherIsBetter: true, format: 'percentage' },
+    { id: 'avg', name: 'Avg. Success', higherIsBetter: true, format: 'percentage' },
+    { id: 'easy', name: 'Easy', higherIsBetter: true, format: 'percentage' },
+    { id: 'medium', name: 'Medium', higherIsBetter: true, format: 'percentage' },
+    { id: 'hard', name: 'Hard', higherIsBetter: true, format: 'percentage' },
+    { id: 'very_hard', name: 'Very Hard', higherIsBetter: true, format: 'percentage' },
   ],
-  taskTypes: ['manipulation', 'soft-body', 'rigid-body'],
-  lastUpdated: '2024-11-20',
+  lastUpdated: '2025-12-19',
   scores: [
-    { modelId: 'openvla-7b', score: 56.8, details: { rigid_body: 62.3, soft_body: 45.2 } },
-    { modelId: 'rdt-1b', score: 71.5, details: { rigid_body: 78.2, soft_body: 58.1 } },
-    { modelId: 'hpt', score: 63.2, details: { rigid_body: 68.5, soft_body: 52.8 } },
-    { modelId: 'octo-base', score: 42.5, details: { rigid_body: 48.7, soft_body: 32.1 } },
-    { modelId: 'diffusion-policy', score: 67.8, details: { rigid_body: 73.5, soft_body: 56.4 } },
+    { modelId: 'smolvla-0.45b', score: 57.3, details: { easy: 82.5, medium: 41.8, hard: 45.0, very_hard: 60.0 } },
   ],
 };
 
 // ============================================
-// ALOHA Benchmark
+// RoboTwin 2.0
 // ============================================
-export const ALOHA: Benchmark = {
-  id: 'aloha',
-  name: 'ALOHA',
-  shortName: 'ALOHA',
-  description: 'ALOHA: A Low-cost Open-source Hardware System for Bimanual Teleoperation with simulation benchmark.',
-  iconEmoji: '🤲',
-  category: 'manipulation',
+export const ROBOTWIN: Benchmark = {
+  id: 'robotwin',
+  name: 'RoboTwin 2.0',
+  shortName: 'RoboTwin',
+  description: 'A dual-arm robot manipulation benchmark with digital twin capabilities.',
+  iconEmoji: '👯',
+  category: 'simulation',
   paper: {
-    title: 'Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware',
-    authors: ['Tony Z. Zhao', 'Vikash Kumar', 'Sergey Levine', 'Chelsea Finn'],
-    venue: 'RSS',
-    year: 2023,
-    arxivId: '2304.13705',
+    title: 'RoboTwin: Dual-Arm Robot Manipulation Benchmark',
+    authors: ['Tianxing Chen', 'et al.'],
+    venue: 'arXiv',
+    year: 2025,
+    arxivId: '2510.10274',
   },
-  websiteUrl: 'https://tonyzhaozh.github.io/aloha/',
-  githubUrl: 'https://github.com/tonyzhaozh/aloha',
+  websiteUrl: 'https://robotwin-platform.github.io/',
+  datasetUrls: {
+    other: 'https://huggingface.co/datasets/TianxingChen/RoboTwin2.0/tree/main/dataset',
+  },
   metrics: [
-    { id: 'insertion', name: 'Peg Insertion', higherIsBetter: true, format: 'percentage' },
-    { id: 'transfer', name: 'Object Transfer', higherIsBetter: true, format: 'percentage' },
+    { id: 'easy', name: 'Easy', higherIsBetter: true, format: 'percentage' },
+    { id: 'hard', name: 'Hard', higherIsBetter: true, format: 'percentage' },
   ],
-  taskTypes: ['manipulation', 'bimanual'],
-  lastUpdated: '2024-08-15',
+  lastUpdated: '2025-12-19',
   scores: [
-    { modelId: 'act', score: 92.5, details: { insertion: 95.0, transfer: 90.0 } },
-    { modelId: 'diffusion-policy', score: 88.3, details: { insertion: 91.2, transfer: 85.4 } },
-    { modelId: 'rdt-1b', score: 94.1, details: { insertion: 96.5, transfer: 91.7 } },
-    { modelId: 'openvla-7b', score: 78.5, details: { insertion: 82.3, transfer: 74.7 } },
-    { modelId: 'octo-base', score: 65.2, details: { insertion: 68.5, transfer: 61.9 } },
+    { modelId: 'x-vla', score: 70.0, details: { easy: 70.0, hard: 39.0 } },
+    { modelId: 'pi0', score: 46.4, details: { easy: 46.4, hard: 16.3 } },
+    { modelId: 'rdt', score: 34.5, details: { easy: 34.5, hard: 13.7 } },
+  ],
+};
+
+// ============================================
+// VLABench
+// ============================================
+export const VLABENCH: Benchmark = {
+  id: 'vlabench',
+  name: 'VLABench',
+  shortName: 'VLABench',
+  description: 'A benchmark for Vision-Language-Action models with diverse robotic primitives.',
+  iconEmoji: '⚖️',
+  category: 'simulation',
+  paper: {
+    title: 'VLABench: Comprehensive Evaluation of VLA Models',
+    authors: ['VLABench Team'],
+    venue: 'arXiv',
+    year: 2024,
+  },
+  datasetUrls: {
+    lerobot: 'https://huggingface.co/datasets/VLABench/vlabench_primitive_ft_lerobot',
+    rlds: 'https://huggingface.co/datasets/VLABench/vlabench_primitive_rlds_resize224',
+  },
+  metrics: [
+    { id: 'avg', name: 'Avg. Success', higherIsBetter: true, format: 'percentage' },
+    { id: 'common_sense', name: 'Common Sense', higherIsBetter: true, format: 'percentage' },
+    { id: 'cross_category', name: 'Cross Category', higherIsBetter: true, format: 'percentage' },
+    { id: 'in_distribution', name: 'In Distribution', higherIsBetter: true, format: 'percentage' },
+    { id: 'semantic_instruction', name: 'Semantic Instruction', higherIsBetter: true, format: 'percentage' },
+    { id: 'unseen_texture', name: 'Unseen Texture', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2025-12-19',
+  scores: [
+    { 
+      modelId: 'x-vla', 
+      score: 51.05, 
+      details: { common_sense: 48.2, cross_category: 25.1, in_distribution: 67.8, semantic_instruction: 63.1 } 
+    },
+    { 
+      modelId: 'pi0', 
+      score: 29.36, 
+      details: { common_sense: 29.1, cross_category: 21.2, in_distribution: 47.0, semantic_instruction: 17.3, unseen_texture: 32.2 } 
+    },
+    { 
+      modelId: 'pi0.5', 
+      score: 24.58, 
+      details: { common_sense: 18.0, cross_category: 22.6, in_distribution: 40.6, semantic_instruction: 16.1, unseen_texture: 25.6 } 
+    },
+    { 
+      modelId: 'pi0fast', 
+      score: 22.36, 
+      details: { common_sense: 21.1, cross_category: 18.1, in_distribution: 29.1, semantic_instruction: 19.9, unseen_texture: 23.6 } 
+    },
   ],
 };
 
@@ -257,13 +375,13 @@ export const ALOHA: Benchmark = {
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
+  LIBERO_PRO,
   SIMPLER_ENV,
   CALVIN,
   LIBERO,
   META_WORLD,
-  RLBENCH,
-  MANISKILL,
-  ALOHA,
+  VLABENCH,
+  ROBOTWIN,
 ];
 
 export const BENCHMARKS_BY_ID: Record<string, Benchmark> = ALL_BENCHMARKS.reduce(
@@ -271,20 +389,5 @@ export const BENCHMARKS_BY_ID: Record<string, Benchmark> = ALL_BENCHMARKS.reduce
   {}
 );
 
-/**
- * Get a benchmark by ID
- */
-export const getBenchmarkById = (id: string): Benchmark | undefined => 
-  BENCHMARKS_BY_ID[id];
-
-/**
- * Get all benchmarks
- */
+export const getBenchmarkById = (id: string): Benchmark | undefined => BENCHMARKS_BY_ID[id];
 export const getAllBenchmarks = (): Benchmark[] => ALL_BENCHMARKS;
-
-/**
- * Get benchmarks by category
- */
-export const getBenchmarksByCategory = (category: string): Benchmark[] =>
-  ALL_BENCHMARKS.filter((b) => b.category === category);
-

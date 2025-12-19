@@ -6,10 +6,10 @@ const NAV_LINKS = [
   { to: '/benchmark/simpler-env', label: 'SIMPLER' },
   { to: '/benchmark/calvin', label: 'CALVIN' },
   { to: '/benchmark/libero', label: 'LIBERO' },
+  { to: '/benchmark/libero-pro', label: 'LIBERO-PRO' },
   { to: '/benchmark/meta-world', label: 'Meta-World' },
-  { to: '/benchmark/rlbench', label: 'RLBench' },
-  { to: '/benchmark/maniskill', label: 'ManiSkill' },
-  { to: '/benchmark/aloha', label: 'ALOHA' },
+  { to: '/benchmark/vlabench', label: 'VLABench' },
+  { to: '/benchmark/robotwin', label: 'RoboTwin' },
 ];
 
 export function Layout() {
@@ -40,7 +40,7 @@ export function Layout() {
 
           <div className="header-actions">
             <a
-              href="https://github.com/matsuolab/vlaleaderboard"
+              href="https://github.com/k1000dai/vlaleaderboard"
               target="_blank"
               rel="noopener noreferrer"
               className="icon-button"
@@ -61,9 +61,9 @@ export function Layout() {
       <footer className="footer">
         <div className="footer-content">
           <p>
-            © 2024 VLA Leaderboard • 
-            <a href="https://www.matsuo-lab.net/" target="_blank" rel="noopener noreferrer">
-              Matsuo Lab
+            © 2025 VLA Leaderboard • 
+            <a href="https://k1000dai.github.io/" target="_blank" rel="noopener noreferrer">
+              k1000dai
               <ExternalLink size={12} style={{ marginLeft: 4 }} />
             </a>
           </p>
@@ -75,4 +75,3 @@ export function Layout() {
     </div>
   );
 }
-

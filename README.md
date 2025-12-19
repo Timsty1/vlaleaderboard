@@ -141,6 +141,6 @@ MIT License - see LICENSE file for details.
 
 ## Acknowledgments
 
-- [Matsuo Lab](https://www.matsuo-lab.net/) for hosting
+- [k1000dai](https://k1000dai.github.io/) for development
 - VLA research community for benchmark data
 - [LMArena Leaderboard](https://huggingface.co/spaces/lmarena-ai/lmarena-leaderboard) for design inspiration

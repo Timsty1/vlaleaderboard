@@ -65,6 +65,11 @@ export interface Benchmark {
   paper?: Paper;
   websiteUrl?: string;
   githubUrl?: string;
+  datasetUrls?: {
+    rlds?: string;
+    lerobot?: string;
+    other?: string;
+  };
   category: BenchmarkCategory;
   metrics: Metric[];
   scores: BenchmarkScore[];
