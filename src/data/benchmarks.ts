@@ -80,6 +80,11 @@ export const LIBERO: Benchmark = {
       modelId: 'vla-0',
       score: 94.7,
       details: { goal: 96.2, long: 87.6, object: 97.8, spatial: 97.0 }
+    },
+    {
+      modelId: 'gr00tn1.6',
+      score: 96.99,
+      details: { goal: 97.5, long: 94.35, object: 98.45, spatial: 97.65 }
     }
 
   ],

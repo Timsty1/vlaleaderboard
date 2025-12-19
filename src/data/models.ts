@@ -184,6 +184,21 @@ export const MODELS: Record<string, ModelEntry> = {
     isOpenSource: true,
     dateAdded: '2025-12-19',
     modelSize: '3b'
+  },
+  'gr00tn1.6' : {
+    id: 'gr00tn1.6',
+    name: 'GR00TN1.6',
+    organization: 'NVIDIA',
+    paper: {
+      title: 'GR00TN1.6',
+      authors: ['NVIDIA'],
+      year: 2025,
+      url: 'https://research.nvidia.com/labs/gear/gr00t-n1_6/'
+    },
+    githubUrl: "https://github.com/NVIDIA/Isaac-GR00T",
+    isOpenSource: true,
+    dateAdded: '2025-12-19',
+    modelSize: '3b'
   }
 };
 
