@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { to: '/benchmark/robotwin', label: 'RoboTwin' },
   { to: '/benchmark/simpler-env', label: 'SIMPLER' },
   { to: '/benchmark/libero-pro', label: 'LIBERO-PRO' },
+  { to: '/benchmark/behavior', label: 'BEHAVIOR' },
 ];
 
 export function Layout() {

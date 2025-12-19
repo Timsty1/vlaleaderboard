@@ -86,7 +86,6 @@ export const LIBERO: Benchmark = {
       score: 96.99,
       details: { goal: 97.5, long: 94.35, object: 98.45, spatial: 97.65 }
     }
-
   ],
 };
 
@@ -376,6 +375,50 @@ export const LIBERO_PRO: Benchmark = {
 };
 
 // ============================================
+// BEHAVIOR-1K
+// ============================================
+export const BEHAVIOR: Benchmark = {
+  id: 'behavior',
+  name: 'BEHAVIOR-1K',
+  shortName: 'BEHAVIOR',
+  description: 'A benchmark for general robot control with 1,000 everyday activities.',
+  iconEmoji: '🏠',
+  category: 'simulation',
+  paper: {
+    title: 'BEHAVIOR-1K: A Multi-Task, Multi-Scene Benchmark for Robotic Manipulation',
+    authors: ['NVIDIA GR00T Team', 'et al.'],
+    year: 2024,
+    url: 'https://behavior.stanford.edu/',
+  },
+  websiteUrl: 'https://behavior.stanford.edu/',
+  githubUrl: 'https://github.com/StanfordVL/BEHAVIOR-1K',
+  datasetUrls: {
+    lerobot: 'https://huggingface.co/datasets/behavior-1k/2025-challenge-demos',
+    other: "https://huggingface.co/datasets/behavior-1k/2025-challenge-rawdata"
+  },
+  metrics: [
+    { id: 'avg', name: 'Avg. Progress', higherIsBetter: true, format: 'percentage' },
+  ],
+  lastUpdated: '2025-12-19',
+  scores: [
+    {
+      modelId: 'gr00tn1.6',
+      score: 26.3,
+      details: {
+        avg: 26.3,
+      }
+    },
+    {
+      modelId: 'pi0.5',
+      score: 11.3,
+      details: {
+        avg: 11.3, 
+      }
+    }
+  ],
+};
+
+// ============================================
 // Benchmark Registry
 // ============================================
 export const ALL_BENCHMARKS: Benchmark[] = [
@@ -386,6 +429,7 @@ export const ALL_BENCHMARKS: Benchmark[] = [
   ROBOTWIN,
   SIMPLER_ENV,
   LIBERO_PRO,
+  BEHAVIOR,
 ];
 
 export const BENCHMARKS_BY_ID: Record<string, Benchmark> = ALL_BENCHMARKS.reduce(
