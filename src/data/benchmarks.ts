@@ -36,45 +36,45 @@ export const LIBERO: Benchmark = {
   ],
   lastUpdated: '2025-12-19',
   scores: [
-    { 
-      modelId: 'vla-adapter-pro', 
-      score: 98.5, 
-      details: { goal: 98.2, long: 96.4, object: 99.6, spatial: 99.6 } 
+    {
+      modelId: 'vla-adapter-pro',
+      score: 98.5,
+      details: { goal: 98.2, long: 96.4, object: 99.6, spatial: 99.6 }
     },
-    { 
-      modelId: 'x-vla', 
-      score: 98.1, 
-      details: { goal: 97.8, long: 97.6, object: 98.6, spatial: 98.2 } 
+    {
+      modelId: 'x-vla',
+      score: 98.1,
+      details: { goal: 97.8, long: 97.6, object: 98.6, spatial: 98.2 }
     },
-    { 
-      modelId: 'flower', 
-      score: 96.9, 
-      details: { goal: 96.1, long: 94.9, object: 99.1, spatial: 97.5 } 
+    {
+      modelId: 'flower',
+      score: 96.9,
+      details: { goal: 96.1, long: 94.9, object: 99.1, spatial: 97.5 }
     },
-    { 
-      modelId: 'pi0.5', 
-      score: 96.85, 
-      details: { goal: 98.0, long: 92.4, object: 98.2, spatial: 98.8 } 
+    {
+      modelId: 'pi0.5',
+      score: 96.85,
+      details: { goal: 98.0, long: 92.4, object: 98.2, spatial: 98.8 }
     },
-    { 
-      modelId: 'pi0', 
-      score: 94.15, 
-      details: { goal: 95.8, long: 85.2, object: 98.8, spatial: 96.8 } 
+    {
+      modelId: 'pi0',
+      score: 94.15,
+      details: { goal: 95.8, long: 85.2, object: 98.8, spatial: 96.8 }
     },
-    { 
-      modelId: 'smolvla-0.45b', 
-      score: 87.3, 
-      details: { goal: 92.0, long: 71.0, object: 96.0, spatial: 90.0 } 
+    {
+      modelId: 'smolvla-0.45b',
+      score: 87.3,
+      details: { goal: 92.0, long: 71.0, object: 96.0, spatial: 90.0 }
     },
-    { 
-      modelId: 'pi0fast', 
-      score: 85.5, 
-      details: { goal: 88.6, long: 60.2, object: 96.8, spatial: 96.4 } 
+    {
+      modelId: 'pi0fast',
+      score: 85.5,
+      details: { goal: 88.6, long: 60.2, object: 96.8, spatial: 96.4 }
     },
-    { 
-      modelId: 'octo', 
-      score: 75.1, 
-      details: { goal: 84.6, long: 51.1, object: 85.7, spatial: 78.9 } 
+    {
+      modelId: 'octo',
+      score: 75.1,
+      details: { goal: 84.6, long: 51.1, object: 85.7, spatial: 78.9 }
     },
   ],
 };
@@ -104,14 +104,17 @@ export const CALVIN: Benchmark = {
   metrics: [
     { id: 'avg_len', name: 'Avg. Length', higherIsBetter: true, format: 'decimal' },
     { id: 'sr_1', name: 'SR (1 task)', higherIsBetter: true, format: 'percentage' },
+    { id: 'sr_2', name: 'SR (2 tasks)', higherIsBetter: true, format: 'percentage' },
+    { id: 'sr_3', name: 'SR (3 tasks)', higherIsBetter: true, format: 'percentage' },
+    { id: 'sr_4', name: 'SR (4 tasks)', higherIsBetter: true, format: 'percentage' },
     { id: 'sr_5', name: 'SR (5 tasks)', higherIsBetter: true, format: 'percentage' },
   ],
   lastUpdated: '2025-12-19',
   scores: [
-    { modelId: 'flower', score: 4.53, details: { sr_1: 99.4, sr_5: 77.8 } },
-    { modelId: 'vla-adapter-pro', score: 4.5, details: { sr_1: 98.5, sr_5: 80.0 } },
-    { modelId: 'x-vla', score: 4.43, details: { sr_1: 97.1, sr_5: 78.8 } },
-    { modelId: 'univla', score: 4.41, details: { sr_1: 98.9, sr_5: 75.1 } },
+    { modelId: 'flower', score: 4.53, details: { sr_1: 99.4, sr_2: 95.8, sr_3: 90.7, sr_4: 84.9, sr_5: 77.8, avg_len: 4.53 } },
+    { modelId: 'vla-adapter-pro', score: 4.5, details: { sr_1: 98.5, sr_2: 95.0, sr_3: 90.5, sr_4: 85.3, sr_5: 80.0, avg_len: 4.5 } },
+    { modelId: 'x-vla', score: 4.43, details: { sr_1: 97.1, sr_2: 92.6, sr_3: 88.5, sr_4: 84.4, sr_5: 78.8, avg_len: 4.43 } },
+    { modelId: 'univla', score: 4.41, details: { sr_1: 98.9, sr_2: 94.8, sr_3: 89.0, sr_4: 82.8, sr_5: 75.1, avg_len: 4.41 } },
   ],
 };
 
@@ -145,25 +148,25 @@ export const VLABENCH: Benchmark = {
   ],
   lastUpdated: '2025-12-19',
   scores: [
-    { 
-      modelId: 'x-vla', 
-      score: 51.05, 
-      details: { track_3_common_sense: 48.2, track_2_cross_category: 25.1, track_1_in_distribution: 67.8, track_4_semantic_instruction: 63.1 } 
+    {
+      modelId: 'x-vla',
+      score: 51.05,
+      details: { track_3_common_sense: 48.2, track_2_cross_category: 25.1, track_1_in_distribution: 67.8, track_4_semantic_instruction: 63.1 }
     },
-    { 
-      modelId: 'pi0', 
-      score: 29.36, 
-      details: { track_3_common_sense: 29.1, track_2_cross_category: 21.2, track_1_in_distribution: 47.0, track_4_semantic_instruction: 17.3, track_6_unseen_texture: 32.2 } 
+    {
+      modelId: 'pi0',
+      score: 29.36,
+      details: { track_3_common_sense: 29.1, track_2_cross_category: 21.2, track_1_in_distribution: 47.0, track_4_semantic_instruction: 17.3, track_6_unseen_texture: 32.2 }
     },
-    { 
-      modelId: 'pi0.5', 
-      score: 24.58, 
-      details: { track_3_common_sense: 18.0, track_2_cross_category: 22.6, track_1_in_distribution: 40.6, track_4_semantic_instruction: 16.1, track_6_unseen_texture: 25.6 } 
+    {
+      modelId: 'pi0.5',
+      score: 24.58,
+      details: { track_3_common_sense: 18.0, track_2_cross_category: 22.6, track_1_in_distribution: 40.6, track_4_semantic_instruction: 16.1, track_6_unseen_texture: 25.6 }
     },
-    { 
-      modelId: 'pi0fast', 
-      score: 22.36, 
-      details: { track_3_common_sense: 21.1, track_2_cross_category: 18.1, track_1_in_distribution: 29.1, track_4_semantic_instruction: 19.9, track_6_unseen_texture: 23.6 } 
+    {
+      modelId: 'pi0fast',
+      score: 22.36,
+      details: { track_3_common_sense: 21.1, track_2_cross_category: 18.1, track_1_in_distribution: 29.1, track_4_semantic_instruction: 19.9, track_6_unseen_texture: 23.6 }
     },
   ],
 };
@@ -307,55 +310,55 @@ export const LIBERO_PRO: Benchmark = {
   ],
   lastUpdated: '2025-12-19',
   scores: [
-    { 
-      modelId: 'pi0.5', 
-      score: 0.53, 
-      details: { 
+    {
+      modelId: 'pi0.5',
+      score: 0.53,
+      details: {
         goal_obj: 0.97, goal_pos: 0.38, goal_sem: 0.97, goal_task: 0.00, goal_env: 0.46,
         spatial_obj: 0.97, spatial_pos: 0.20, spatial_sem: 0.97, spatial_task: 0.01, spatial_env: 0.46,
         l10_obj: 0.92, l10_pos: 0.08, l10_sem: 0.93, l10_task: 0.01, l10_env: 0.46,
         obj_obj: 0.98, obj_pos: 0.17, obj_sem: 0.96, obj_task: 0.01, obj_env: 0.73
-      } 
+      }
     },
-    { 
-      modelId: 'openvla', 
-      score: 0.52, 
-      details: { 
+    {
+      modelId: 'openvla',
+      score: 0.52,
+      details: {
         goal_obj: 0.96, goal_pos: 0.00, goal_sem: 0.98, goal_task: 0.00, goal_env: 0.98,
         spatial_obj: 0.97, spatial_pos: 0.00, spatial_sem: 0.97, spatial_task: 0.00, spatial_env: 0.89,
         l10_obj: 0.81, l10_pos: 0.00, l10_sem: 0.96, l10_task: 0.00, l10_env: 0.85,
         obj_obj: 0.98, obj_pos: 0.00, obj_sem: 0.98, obj_task: 0.00, obj_env: 0.00
-      } 
+      }
     },
-    { 
-      modelId: 'x-vla', 
-      score: 0.46, 
-      details: { 
+    {
+      modelId: 'x-vla',
+      score: 0.46,
+      details: {
         goal_obj: 0.68, goal_pos: 0.01, goal_sem: 0.98, goal_task: 0.09,
         spatial_obj: 0.97, spatial_pos: 0.00, spatial_sem: 0.96, spatial_task: 0.00,
         l10_obj: 0.62, l10_pos: 0.00, l10_sem: 0.95, l10_task: 0.10,
         obj_obj: 0.89, obj_pos: 0.02, obj_sem: 0.98, obj_task: 0.08
-      } 
+      }
     },
-    { 
-      modelId: 'pi0', 
-      score: 0.44, 
-      details: { 
+    {
+      modelId: 'pi0',
+      score: 0.44,
+      details: {
         goal_obj: 0.94, goal_pos: 0.00, goal_sem: 0.93, goal_task: 0.00, goal_env: 0.39,
         spatial_obj: 0.95, spatial_pos: 0.00, spatial_sem: 0.97, spatial_task: 0.00, spatial_env: 0.60,
         l10_obj: 0.79, l10_pos: 0.00, l10_sem: 0.82, l10_task: 0.00, l10_env: 0.27,
         obj_obj: 0.94, obj_pos: 0.00, obj_sem: 0.90, obj_task: 0.00, obj_env: 0.29
-      } 
+      }
     },
-    { 
-      modelId: 'molmoact', 
-      score: 0.41, 
-      details: { 
+    {
+      modelId: 'molmoact',
+      score: 0.41,
+      details: {
         goal_obj: 0.68, goal_pos: 0.00, goal_sem: 0.85, goal_task: 0.00,
         spatial_obj: 0.90, spatial_pos: 0.00, spatial_sem: 0.88, spatial_task: 0.00,
         l10_obj: 0.54, l10_pos: 0.00, l10_sem: 0.74, l10_task: 0.06,
         obj_obj: 0.92, obj_pos: 0.06, obj_sem: 0.96, obj_task: 0.00
-      } 
+      }
     },
   ],
 };

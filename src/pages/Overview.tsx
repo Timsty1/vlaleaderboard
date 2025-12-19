@@ -61,6 +61,14 @@ export function Overview() {
           </p>
           <div className="about-links">
             <a
+              href="https://vla-survey.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="about-link"
+            >
+              📖 VLA Survey Paper
+            </a>
+            <a
               href="https://arxiv.org/abs/2406.09246"
               target="_blank"
               rel="noopener noreferrer"

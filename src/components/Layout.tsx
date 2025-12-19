@@ -22,7 +22,7 @@ export function Layout() {
             <Bot size={28} strokeWidth={2.5} />
             <span>VLA Leaderboard</span>
           </NavLink>
-          
+
           <nav className="nav-links">
             {NAV_LINKS.map((link) => (
               <NavLink
@@ -61,7 +61,7 @@ export function Layout() {
       <footer className="footer">
         <div className="footer-content">
           <p>
-            © 2025 VLA Leaderboard • 
+            © 2025 VLA Leaderboard • Maintained by{' '}
             <a href="https://k1000dai.github.io/" target="_blank" rel="noopener noreferrer">
               k1000dai
               <ExternalLink size={12} style={{ marginLeft: 4 }} />
@@ -71,7 +71,7 @@ export function Layout() {
             A community benchmark for Vision-Language-Action models in robotic manipulation.
           </p>
           <p className="footer-contribution">
-            We welcome contributions! Found a model or benchmark missing? 
+            We welcome contributions! Found a model or benchmark missing?
             <a href="https://github.com/k1000dai/vlaleaderboard" target="_blank" rel="noopener noreferrer">
               Submit a Pull Request on GitHub
               <Github size={12} style={{ marginLeft: 4 }} />
