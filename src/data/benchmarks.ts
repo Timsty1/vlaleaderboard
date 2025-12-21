@@ -85,6 +85,16 @@ export const LIBERO: Benchmark = {
       modelId: 'gr00tn1.6',
       score: 96.99,
       details: { goal: 97.5, long: 94.35, object: 98.45, spatial: 97.65 }
+    },
+    {
+     modelId: 'thinkact',
+     score: 84.4,
+     details: { goal: 87.1, long: 70.9, object: 91.4, spatial: 88.3}
+    },
+    {
+        modelId: 'openvla-oft',
+        score: 97.1,
+        details: {goal : 97.9, long : 94.5, object: 98.4, spatial: 97.6}
     }
   ],
 };
