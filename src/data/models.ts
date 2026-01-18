@@ -7,7 +7,7 @@ import type { ModelEntry } from '../types';
 export const MODELS: Record<string, ModelEntry> = {
     'mixture_of_horizons': {
         id: 'mixture_of_horizons',
-        name: 'mixture_of_horizons',
+        name: 'Mixture of Horizons',
         organization: 'RUC, UNC, CUHK',
         paper: {
             title: 'Mixture of Horizons in Action Chunking',
